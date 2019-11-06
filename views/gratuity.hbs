@@ -1,0 +1,85 @@
+{{> header}}
+<main>
+    <div class="container">
+        <br>
+        <h3 class="center">Pension Payment</h3>
+        <form id="gratuityForm" name="gratuityForm" method="POST" autocomplete="off">
+            <div class="row">
+                <div class="col l6 s12 input-field">
+                    <i class="mdi mdi-alphabetical prefix"></i>
+                    <input type="text" name="firstName" id="firstName" value="{{user.firstName}}" disabled>
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="col l6 s12 input-field">
+                    <i class="mdi mdi-alphabetical prefix"></i>
+                    <input type="text" name="lastName" id="lastName" value="{{user.lastName}}" disabled>
+                    <label for="lastName">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l6 s12 input-field">
+                    <i class="mdi mdi-currency-ngn prefix"></i>
+                    <input type="number" name="salary" id="salary" value="{{user.salary}}" disabled>
+                    <label for="salary">Your Salary</label>
+                </div>
+                <div class="col l6 s12 input-field">
+                    <i class="mdi mdi-currency-ngn prefix"></i>
+                    <input type="number" name="deduction" id="deduction" value="{{user.deduction}}" disabled>
+                    <label for="deduction">Amount Deducted</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l6 s12 input-field">
+                    <i class="mdi mdi-numeric prefix"></i>
+                    <input type="number" name="yearsOfService" id="yearsOfService" value="{{user.duration}}">
+                    <label for="yearsOfService">Years of Service</label>
+                </div>
+                <div class="col l6 s12 input-field">
+                    <i class="mdi mdi-numeric prefix"></i>
+                    <input type="number" name="months" id="months" value="12" disabled>
+                    <label for="months">Number of Months</label>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="col l6 s12 input-field">
+                     <i class="mdi mdi-currency-ngn prefix"></i>
+                    <input type="text" name="gratuity" id="gratuity" value="{{gratuity}}" placeholder="Gratuity" autofocus>
+                    <span class="helper-text">Gratuity</span>
+                </div>
+                <div class="col l6 s12 input-field">
+                    <i class="mdi mdi-currency-ngn prefix"></i>
+                    <input type="number" name="total" id="total" value="{{total}}" placeholder="Total Amount">
+                    <span class="helper-text">Pension</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 input-field">
+                    <button id="calculatePension" data-id={{user._id}} class="btn">Calculate Pension</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 input-field">
+                    <button id="printButton" class="btn waves-effect waves-white">Print Details</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 l4 input-field">
+                    <hr>
+                    <br>
+                    <p class="center">NCP CEO</p>
+                </div>
+                <div class="col s12 l4 input-field">
+                    <hr>
+                    <br>
+                    <p class="center">COMPANY CEO</p>
+                </div>
+                <div class="col s12 l4 input-field">
+                    <hr>
+                    <br>
+                    <p class="center">PENSIONER</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{{> footer}}

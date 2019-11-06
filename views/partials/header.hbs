@@ -1,0 +1,128 @@
+<header>
+     <nav>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">NCP Pensions</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="mdi mdi-menu menu-icon"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/"><i class="mdi mdi-home left"></i>Home</a></li>
+                    {{#if admin}}
+                        <li><a href="#" class="modal-trigger" data-target="pensioners-modal"><i class="mdi mdi-account left"></i>Pensioners</a></li>
+                        <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Admin Log out</a></li>
+                    {{else}}
+                        <li><a href="/!#" class="modal-trigger" data-target="adminLoginModal"><i class="mdi mdi-account left"></i>Admin login</a></li>
+                    {{/if}}
+                    {{#if user}}
+                        <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Log out</a></li>    
+                    {{else}}
+                        <li><a href="/!#" class="modal-trigger" data-target="userLoginModal"><i class="mdi mdi-login-variant left"></i>User Login</a></li>    
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <ul id="mobile-nav" class="sidenav">
+        <li><a href="/"><i class="mdi mdi-home left"></i>Home</a></li>
+        {{#if admin}}
+            <li><a href="#" class="modal-trigger" data-target="pensioners-modal"><i class="mdi mdi-account left"></i>Pensioners</a></li>
+            <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Admin Log out</a></li>
+        {{else}}
+            <li><a href="/!#" class="modal-trigger" data-target="adminLoginModal"><i class="mdi mdi-account left"></i>Admin login</a></li>
+        {{/if}}
+        {{#if user}}
+            <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Log out</a></li>    
+        {{else}}
+            <li><a href="/!#" class="modal-trigger" data-target="userLoginModal"><i class="mdi mdi-login-variant left"></i>User Login</a></li>    
+        {{/if}}
+    </ul>
+
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <h4 class="center">Admin Login</h4>
+            <form name="adminLoginForm" method="POST" action="/admins/login">
+            {{#if adminErrors}}
+                {{#each adminErrors}}
+                    <div>
+                        <p class="red-text text-darken-2 error-messages center">{{this.msg}}</p>
+                    </div>
+                {{/each}}
+            {{/if}}
+            {{#if adminLoginError}}
+                <p class="red-text text-darken-2 error-messages center">{{adminLoginError}}</p>
+            {{/if}}
+                <div class="row">
+                    <div class="col s12 input-field">
+                        <i class="mdi mdi-account-outline prefix"></i>
+                        <input type="text" name="adminUsername" id="adminUsername" class="validate" autofocus value="{{adminUsername}}">
+                        <label for="adminUsername">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 input-field">
+                        <i class="mdi mdi-lock prefix"></i>
+                        <input type="password" name="adminPassword" id="adminPassword" class="validate" value="{{adminPassword}}">
+                        <label for="adminPassword">Password</label>
+                        <span class="helper-text" data-error="Please provide your password"></span>
+                        {{#if adminPasswordError}}
+                            <div>
+                                <p class="red-text text-darken-2 error-messages center">{{adminPasswordError}}</p>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 input-field">
+                        <button class="btn waves-effect waves-white" type="submit" id="adminLoginButton">Log In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="userLoginModal" class="modal">
+            <div class="modal-content">
+                <h4 class="center">User Login</h4>
+                <form name="userLoginForm" method="POST" action="/users/login">
+                    {{#if loginErrors}}
+                        {{#each loginErrors}}
+                            <div>
+                                <p class="red-text text-darken-2 error-messages center">{{this.msg}}</p>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                    {{#if passwordError}}
+                        <div>
+                            <p class="red-text text-darken-2 error-messages center">{{passwordError}}</p>
+                        </div>
+                    {{/if}}
+                    {{#if usernameError}}
+                        <div>
+                            <p class="red-text text-darken-2 error-messages center">{{usernameError}}</p>
+                        </div>
+                    {{/if}}
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <i class="mdi mdi-account-outline prefix"></i>
+                            <input type="text" name="loginID" id="loginID" class="validate" autofocus value="{{loginUsername}}">
+                            <label for="loginID">ID - Number</label>
+                            <span class="helper-text" data-error="Invalid ID-Number"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <i class="mdi mdi-lock prefix"></i>
+                            <input type="password" name="loginPassword" id="loginPassword" class="validate" value="{{loginPassword}}">
+                            <label for="loginPassword">Password</label>
+                            <span class="helper-text" data-error="Please provide your password"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <button class="btn waves-effect waves-white" type="submit" id="customerLoginButton">Log In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>

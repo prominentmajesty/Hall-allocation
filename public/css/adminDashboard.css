@@ -1,0 +1,31 @@
+h4 {
+    color: #2a6c4c;
+}
+
+h6 {
+    color: #555;
+}
+
+.collapsible-icons {
+    color: #c5c5c5;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #2a6c4c;
+}
+
+.preloader-wrapper {
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
+
+.spinner-layer {
+    border-color: green !important;
+}
+
+thead tr {
+    font-weight: 500;
+    font-size: 120%;
+}
