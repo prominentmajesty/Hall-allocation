@@ -18,7 +18,7 @@ const users = require('./routes/users');
 const admins = require('./routes/admins');
 
 mongoose.connect(config.database, {
-    useNewUrlParser: true
+    useNewUrlParser: true, useUnifiedTopology: true
 });
 
 let conn = mongoose.connection;
