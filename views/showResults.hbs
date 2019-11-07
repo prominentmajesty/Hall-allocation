@@ -1,0 +1,40 @@
+{{> header}}
+    <div class="row" style="padding-top: 30px; padding-bottom : 20px">
+        {{#if results}}
+            <div class="row">
+                {{#each results}}
+                    <div class="col s6">
+                        <h4>Day Of Exam : {{this.day1}}</h4>
+                        <h4>Department : {{this.department1}}</h4>
+                        <h4>Level : {{this.level1}}</h4>
+                        <h4>Time : {{this.time1}}</h4>
+                        <h4>Hall : {{this.hall1}}</h4>
+                        <h4>Paper : {{this.paper}}</h4>
+                    </div>
+                    <div class="col s6">
+                        <h4>Day Of Exam : {{this.day2}}</h4>
+                        <h4>Department : {{this.department2}}</h4>
+                        <h4>level : {{this.level2}}</h4>
+                        <h4>Time : {{this.time2}}</h4>
+                        <h4>Hall : {{this.hall2}}</h4>
+                        <h4>Paper : {{this.paper2}}</h4>
+                    </div>
+                    <div class = "col s6">
+                        <h4>Day Of Exam : {{this.day3}}</h4>
+                        <h4>Department : {{this.department3}}</h4>
+                        <h4>level : {{this.level3}}</h4>
+                        <h4>Time : {{this.time3}}</h4>
+                        <h4>Hall : {{this.hall3}}</h4>
+                        <h4>Paper : {{this.paper3}}</h4>
+                    </div>
+                        <h4>Day Of Exam : {{this.day4}}</h4>
+                        <h4>Department : {{this.department2}}</h4>
+                        <h4>level : {{this.level4}}</h4>
+                        <h4>Time : {{this.time4}}</h4>
+                        <h4>Hall : {{this.hall4}}</h4>
+                        <h4>Paper : {{this.paper4}}</h4>
+                {{/each}}
+            </div>
+        {{/if}}   
+    </div>
+{{> footer}}
