@@ -2,54 +2,19 @@
      <nav>
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">NCP Pensions</a>
-                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="mdi mdi-menu menu-icon"></i></a>
+                <a href="#" class="brand-logo">SMART Exam Hall Allocation</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="mdi mdi-menu menu-icon"></i> Check For Venue</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="/"><i class="mdi mdi-home left"></i>Home</a></li>
-                    {{#if admin}}
-                        <li><a href="#" class="modal-trigger" data-target="pensioners-modal"><i class="mdi mdi-account left"></i>Pensioners</a></li>
-                        <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Admin Log out</a></li>
-                    {{else}}
-                        <li><a href="/!#" class="modal-trigger" data-target="adminLoginModal"><i class="mdi mdi-account left"></i>Admin login</a></li>
-                    {{/if}}
-                    {{#if user}}
-                        <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Log out</a></li>    
-                    {{else}}
-                        <li><a href="/!#" class="modal-trigger" data-target="userLoginModal"><i class="mdi mdi-login-variant left"></i>User Login</a></li>    
-                    {{/if}}
+                    <li><a href="/"><i class="mdi mdi-home left"></i>Home</a></li>    
+                    <li><a href="/admins/showResults"><i class="mdi mdi-login-variant left"></i>Check For exam Hall</a></li>    
                 </ul>
             </div>
         </div>
     </nav>
-    <ul id="mobile-nav" class="sidenav">
-        <li><a href="/"><i class="mdi mdi-home left"></i>Home</a></li>
-        {{#if admin}}
-            <li><a href="#" class="modal-trigger" data-target="pensioners-modal"><i class="mdi mdi-account left"></i>Pensioners</a></li>
-            <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Admin Log out</a></li>
-        {{else}}
-            <li><a href="/!#" class="modal-trigger" data-target="adminLoginModal"><i class="mdi mdi-account left"></i>Admin login</a></li>
-        {{/if}}
-        {{#if user}}
-            <li><a href="/"><i class="mdi mdi-logout-variant left"></i>Log out</a></li>    
-        {{else}}
-            <li><a href="/!#" class="modal-trigger" data-target="userLoginModal"><i class="mdi mdi-login-variant left"></i>User Login</a></li>    
-        {{/if}}
-    </ul>
-
     <div id="adminLoginModal" class="modal">
         <div class="modal-content">
             <h4 class="center">Admin Login</h4>
             <form name="adminLoginForm" method="POST" action="/admins/login">
-            {{#if adminErrors}}
-                {{#each adminErrors}}
-                    <div>
-                        <p class="red-text text-darken-2 error-messages center">{{this.msg}}</p>
-                    </div>
-                {{/each}}
-            {{/if}}
-            {{#if adminLoginError}}
-                <p class="red-text text-darken-2 error-messages center">{{adminLoginError}}</p>
-            {{/if}}
                 <div class="row">
                     <div class="col s12 input-field">
                         <i class="mdi mdi-account-outline prefix"></i>

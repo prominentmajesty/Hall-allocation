@@ -44,16 +44,6 @@ app.set('view engine', '.hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser('keybaord cat'));
-app.use(session({
-    secret: 'keyboard cat',
-    resave: true,
-    saveUninitialized: true
-}));
-app.use(flash());
-app.use((req, res, next) => {
-    res.locals.messages = require('express-messages')(req, res);
-    next();
-});
 app.use(expressValidator({
     errorFormatter: (param, msg, value) => {
         let namespace = param.split('.')
@@ -70,6 +60,12 @@ app.use(expressValidator({
         };
     }
 }));
+app.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(flash());
 
 require('./config/passport')(passport);
 
@@ -86,7 +82,7 @@ app.use('/admins', admins);
 
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'NCP Pensions - Home',
+        title: 'Hall allocaton - Home',
         style: 'index.css',
         script: 'index.js'
     });

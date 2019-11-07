@@ -1,3 +1,7 @@
+$('#alert_close').click(function(){
+    $( "#alert_box" ).fadeOut( "slow", function() {
+       });
+    });
 $(document).ready(function () {
     $('.collapsible').collapsible();
     $('.datepicker').datepicker();

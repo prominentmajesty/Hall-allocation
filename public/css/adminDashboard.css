@@ -29,3 +29,12 @@ thead tr {
     font-weight: 500;
     font-size: 120%;
 }
+.icon_style{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    cursor:pointer; 
+    }
+    
